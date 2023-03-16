@@ -4,8 +4,7 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start",
-    "post-update": "yarn upgrade --latest"
+    "start": "next start"
   },
   "dependencies": {
     "@chakra-ui/icons": "^2.0.17",
@@ -20,6 +19,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-json-view": "^1.21.3",
+    "siwe": "^1.1.6",
     "wagmi": "0.11.5"
   },
   "license": "MIT",
@@ -38,6 +38,9 @@
     "react-json-view": {
       "react": "$react",
       "react-dom": "$react-dom"
+    },
+    "siwe": {
+      "ethers": "$ethers"
     }
   },
   "devDependencies": {

@@ -2,6 +2,7 @@ import { WagmiConfig, createClient } from "wagmi";
 import { mainnet, polygon, optimism, arbitrum, avalanche } from "wagmi/chains";
 import { ConnectKitProvider, getDefaultClient } from "connectkit";
 import { ChakraProvider } from "@chakra-ui/react";
+import SIWEProvider from "../SIWEProvider";
 
 const client = createClient(
   getDefaultClient({
@@ -16,9 +17,11 @@ const App = ({ Component, pageProps }) => {
   return (
     <ChakraProvider>
       <WagmiConfig client={client}>
-        <ConnectKitProvider>
-          <Component {...pageProps} />
-        </ConnectKitProvider>
+        <SIWEProvider>
+          <ConnectKitProvider>
+            <Component {...pageProps} />
+          </ConnectKitProvider>
+        </SIWEProvider>
       </WagmiConfig>
     </ChakraProvider>
   );
