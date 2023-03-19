@@ -1,4 +1,27 @@
 import axios from "axios";
+
+const transport = axios.create({
+  withCredentials: true,
+});
+
+export function getNonce(baseUrl) {
+  return transport.get((`${baseUrl}auth/nonce`));
+}
+
+export function postVerify({ baseUrl, message, signature }) {
+  return transport.post(`${baseUrl}auth/verify`, {
+    message,
+    signature,
+  });
+}
+
+export function getSession(baseUrl) {
+  return transport.get((`${baseUrl}auth/session`));
+}
+
+export function signOut(baseUrl) {
+  return transport.get((`${baseUrl}auth/logout`));
+}
 // LIFI API CALLS
 export const getChains = async () => {
   const result = await axios.get("https://li.quest/v1/chains");
