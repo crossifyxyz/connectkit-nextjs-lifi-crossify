@@ -1,8 +1,12 @@
 import { WagmiConfig, createClient } from "wagmi";
 import { mainnet, polygon, optimism, arbitrum, avalanche } from "wagmi/chains";
-import { ConnectKitProvider, getDefaultClient, SIWEProvider } from "connectkit";
+import {
+  ConnectKitProvider,
+  getDefaultClient,
+  SIWEConfig,
+  SIWEProvider,
+} from "connectkit";
 import { ChakraProvider } from "@chakra-ui/react";
-import { SIWEConfig } from "connectkit/build/components/Standard/SIWE/SIWEContext";
 import { SiweMessage } from "siwe";
 import { getNonce, postVerify, getSession, signOut } from "../fetch";
 
@@ -40,7 +44,7 @@ const siweConfig: SIWEConfig = {
 const client = createClient(
   getDefaultClient({
     appName: "ConnectKit Next.js demo",
-    //alchemyId: process.env.ALCHEMY_ID,
+    alchemyId: "02919779fdae4e458d9bfecbff626312",
     //infuraId: process.env.INFURA_ID,
     chains: [mainnet, polygon, optimism, arbitrum, avalanche],
   })

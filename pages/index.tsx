@@ -23,7 +23,7 @@ const ReactJson = ({ src }: { src: ReactJsonViewProps["src"] }) => {
 
 // PAGE FUNCTION
 export default function Siwe() {
-  const { session } = useSIWE();
+  const test = useSIWE();
   // RETURN UI
   return (
     <Stack
@@ -34,7 +34,7 @@ export default function Siwe() {
       spacing={10}
     >
       <ConnectKitButton />
-      <ReactJson src={session} />
+      <ReactJson src={test.data} />
     </Stack>
   );
 }
